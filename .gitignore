@@ -3,6 +3,9 @@
 .idea
 .classpath
 .project
-target
-.settings
+target*/
+.settings/
 .class
+bin/
+stuff/
+Log*/
