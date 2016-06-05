@@ -1,0 +1,209 @@
+<project basedir="." default="build" name="UnitTestPractice">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../../.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+        <pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/tempus-fugit/tempus-fugit/1.1/tempus-fugit-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/testng/testng/6.9.10/testng-6.9.10.jar"/>
+        <pathelement location="../../../.m2/repository/com/beust/jcommander/1.48/jcommander-1.48.jar"/>
+        <pathelement location="../../../.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar"/>
+        <pathelement location="../../../.m2/repository/com/googlecode/zohhak/zohhak/1.1.1/zohhak-1.1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar"/>
+        <pathelement location="../../../.m2/repository/com/carrotsearch/junit-benchmarks/0.7.2/junit-benchmarks-0.7.2.jar"/>
+        <pathelement location="../../../.m2/repository/junitperf/junitperf/1.8/junitperf-1.8.jar"/>
+    </path>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="UnitTestPractice.classpath">
+        <pathelement location="target/classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <path id="run.CalculatorGui.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.JunitRules.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.ParametersTests.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.JunitSuit.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.ZohhakParameterizedTests.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestCalculator.testAddWithParameters.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestParameter.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestRunner.classpath">
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="UnitTestPractice.classpath"/>
+    </path>
+    <path id="run.TestCalculator (1).classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestRunner (1).classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.TestParameter (1).classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.JunitBenchMarkTests.classpath">
+        <path refid="UnitTestPractice.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+                <exclude name="sayem/junit/"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <exclude name="sayem/junit/"/>
+            <classpath refid="UnitTestPractice.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="CalculatorGui">
+        <java classname="com.core.CalculatorGui" failonerror="true" fork="yes">
+            <classpath refid="run.CalculatorGui.classpath"/>
+        </java>
+    </target>
+    <target name="JunitRules">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.JunitRules" todir="${junit.output.dir}"/>
+            <classpath refid="run.JunitRules.classpath"/>
+        </junit>
+    </target>
+    <target name="ParametersTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.ParametersTests" todir="${junit.output.dir}"/>
+            <classpath refid="run.ParametersTests.classpath"/>
+        </junit>
+    </target>
+    <target name="JunitSuit">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.JunitSuit" todir="${junit.output.dir}"/>
+            <classpath refid="run.JunitSuit.classpath"/>
+        </junit>
+    </target>
+    <target name="ZohhakParameterizedTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.ZohhakParameterizedTests" todir="${junit.output.dir}"/>
+            <classpath refid="run.ZohhakParameterizedTests.classpath"/>
+        </junit>
+    </target>
+    <target name="TestCalculator.testAddWithParameters">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.TestCalculator" todir="${junit.output.dir}"/>
+            <classpath refid="run.TestCalculator.testAddWithParameters.classpath"/>
+        </junit>
+    </target>
+    <target name="TestParameter">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.TestParameter" todir="${junit.output.dir}"/>
+            <classpath refid="run.TestParameter.classpath"/>
+        </junit>
+    </target>
+    <target name="TestRunner">
+        <java classname="org.automation.junit.TestRunner" failonerror="true" fork="yes">
+            <classpath refid="run.TestRunner.classpath"/>
+        </java>
+    </target>
+    <target name="TestCalculator (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.automation.junit.TestCalculator" todir="${junit.output.dir}"/>
+            <classpath refid="run.TestCalculator (1).classpath"/>
+        </junit>
+    </target>
+    <target name="TestRunner (1)">
+        <java classname="automation.junit.TestRunner" failonerror="true" fork="yes">
+            <classpath refid="run.TestRunner (1).classpath"/>
+        </java>
+    </target>
+    <target name="TestParameter (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="automation.junit.TestParameter" todir="${junit.output.dir}"/>
+            <classpath refid="run.TestParameter (1).classpath"/>
+        </junit>
+    </target>
+    <target name="JunitBenchMarkTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="loadtest.junit.JunitBenchMarkTests" todir="${junit.output.dir}"/>
+            <classpath refid="run.JunitBenchMarkTests.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
