@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="maven-example-suit" parallel="false">
     <test name="TestByMaven">
+        <parameter name="browser" value="firefox"/>
         <classes>
+            <class name =" "/>
 
         </classes>
 
