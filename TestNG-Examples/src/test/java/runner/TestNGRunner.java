@@ -40,7 +40,9 @@ public class TestNGRunner {
     public static void runAll(String folderPath) throws IOException, SAXException, ParserConfigurationException {
         File folder  = new File(folderPath);
         for(File f : folder.listFiles()){
-            run(f.getName());
+            if(f.isFile()){
+                run(f.getName());
+            }
         }
     }
     public void runAllInResources() throws ParserConfigurationException, SAXException, IOException {
