@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="maven-example-parallel-suit" parallel="true">
+    <test name="TestParallel">
+        <classes>
+
+        </classes>
+
+    </test>
+
+</suite>
