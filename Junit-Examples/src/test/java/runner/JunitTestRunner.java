@@ -8,6 +8,7 @@ import parameterization.ParametersTests;
 import parameterization.TestParameter;
 import suit.JunitSuit;
 
+
 public class JunitTestRunner {
 	
 	public static void main(String...  args){

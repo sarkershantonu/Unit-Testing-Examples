@@ -5,7 +5,7 @@ import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
 import org.junit.After;
 import org.junit.Test;
 
-public class JunitBenchMarkTests extends AbstractBenchmark {
+public class BenchMarkTests extends AbstractBenchmark {
 	private int i = 0;
 
 	@After
