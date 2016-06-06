@@ -18,7 +18,6 @@ import static org.junit.Assert.assertNull;
 public class ZohhakParameterizedTests {
 	private Calculator myCalculator;
 	@Before
-	// @BeforeMethod
 	public void setUp() throws Exception {
 		myCalculator = new Calculator();
 	}

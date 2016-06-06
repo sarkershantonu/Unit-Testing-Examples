@@ -31,7 +31,6 @@ public class ParametersTests {
 	private Calculator myCalculator;
 
 	@Before
-	// @BeforeMethod
 	public void setUp() throws Exception {
 		myCalculator = new Calculator();
 	}

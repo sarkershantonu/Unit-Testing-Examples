@@ -1,13 +1,13 @@
 package rules;
 
-import automation.junit.MyStopWatch;
-import automation.junit.MyWatcher;
-import com.core.Calculator;
+import org.core.Calculator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.*;
+import utils.MyStopWatch;
+import utils.MyWatcher;
 
 import java.util.concurrent.TimeUnit;
 
@@ -41,10 +41,10 @@ public class JunitRules {
 	public TemporaryFolder temp = new TemporaryFolder();
 	@Rule 
 	public Stopwatch watch = new MyStopWatch();
-	
-	private Calculator myCalculator;	
+
+	private Calculator myCalculator;
 	@Before
-	// @BeforeMethod
+
 	public void setUp() throws Exception {
 		myCalculator = new Calculator();
 	}
