@@ -1,6 +1,4 @@
-package automation.junit;
-
-import org.junit.runner.RunWith;
+package parallel;
 
 //@RunWith(Parallelized.class)
 public class RunUnitTestParallel {

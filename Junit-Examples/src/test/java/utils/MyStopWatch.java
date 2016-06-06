@@ -1,4 +1,4 @@
-package automation.junit;
+package utils;
 
 import org.junit.AssumptionViolatedException;
 import org.junit.rules.Stopwatch;

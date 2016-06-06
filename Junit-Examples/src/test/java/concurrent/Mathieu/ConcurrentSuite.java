@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.Mathieu;
 
 
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;

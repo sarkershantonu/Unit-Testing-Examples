@@ -1,10 +1,12 @@
-package automation.junit;
+package runner;
 
 import org.junit.experimental.ParallelComputer;
-import org.junit.internal.runners.statements.Fail;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
+import parameterization.ParametersTests;
+import parameterization.TestParameter;
+import suit.JunitSuit;
 
 public class JunitTestRunner {
 	

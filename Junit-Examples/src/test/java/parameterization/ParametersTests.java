@@ -1,20 +1,14 @@
-package automation.junit;
+package parameterization;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-import org.junit.After;
-import org.junit.AfterClass;
+import org.core.Calculator;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import com.core.Calculator;
+import java.util.Arrays;
+import java.util.Collection;
 
 
 /**
@@ -42,7 +36,7 @@ public class ParametersTests {
 		myCalculator = new Calculator();
 	}
 	@Test
-	@org.testng.annotations.Test
+
 	public void test() {
 		Assert.assertEquals(25, myCalculator.Add(10, 15));
 	}
@@ -61,7 +55,7 @@ public class ParametersTests {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		assertEquals(expected, myCalculator.Add(first, second));
+		Assert.assertEquals(expected, myCalculator.Add(first, second));
 	}
 
 }

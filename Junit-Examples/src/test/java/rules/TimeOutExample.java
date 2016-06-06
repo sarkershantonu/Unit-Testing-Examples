@@ -1,12 +1,11 @@
-package automation.junit.rules;
+package rules;
 
+import org.core.Calculator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import com.core.Calculator;
 
 public class TimeOutExample {
 	private Calculator myCalculator;

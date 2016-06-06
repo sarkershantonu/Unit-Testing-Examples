@@ -1,4 +1,4 @@
-package automation.junit;
+package catagory;
 
 public class JunitCatagory {
 

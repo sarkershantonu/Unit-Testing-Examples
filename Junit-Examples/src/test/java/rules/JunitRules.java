@@ -1,29 +1,15 @@
-package automation.junit.rules;
-
-import java.util.concurrent.TimeUnit;
-
-import org.junit.Assert;
-import org.junit.AssumptionViolatedException;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.DisableOnDebug;
-import org.junit.rules.ErrorCollector;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.RuleChain;
-import org.junit.rules.Stopwatch;
-import org.junit.rules.TemporaryFolder;
-import org.junit.rules.TestName;
-import org.junit.rules.TestRule;
-import org.junit.rules.Timeout;
-import org.junit.rules.Verifier;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
-
-import com.core.Calculator;
+package rules;
 
 import automation.junit.MyStopWatch;
 import automation.junit.MyWatcher;
+import com.core.Calculator;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.*;
+
+import java.util.concurrent.TimeUnit;
 
 public class JunitRules {
 	
