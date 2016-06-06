@@ -10,6 +10,9 @@ import java.util.Queue;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Original posts : https://dzone.com/articles/concurrent-junit-tests
+ */
 public class ConcurrentJunitRunner extends BlockJUnit4ClassRunner {
 	public ConcurrentJunitRunner(final Class<?> klass) throws InitializationError {
 		super(klass);

@@ -15,6 +15,9 @@ import java.util.Queue;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Original posts : https://dzone.com/articles/concurrent-junit-tests
+ */
 public final class ConcurrentSuite extends Suite {
     public ConcurrentSuite(final Class<?> klass) throws InitializationError {
         super(klass, new AllDefaultPossibilitiesBuilder(true) {
