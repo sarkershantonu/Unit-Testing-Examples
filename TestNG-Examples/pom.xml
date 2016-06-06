@@ -41,9 +41,28 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
+                    <parallel>class</parallel>
+                    <threadCount>5</threadCount>
+                    <systemProperties>
+                        <size>1920x1080</size>
+                        <browser>Chrome</browser>
+                    </systemProperties>
+                    <groups>
+                        Acceptace,Intregration
+                    </groups>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${global.suit.xml}}</suiteXmlFile>
+                        <file>${global.suit.xml}}</file>
                     </suiteXmlFiles>
+                    <properties>
+                        <property>
+                            <name>suitethreadpoolsize</name>
+                            <value>3</value>
+                        </property>
+                        <property>
+                            <name>surefire.testng.verbose</name>
+                            <value>10</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
