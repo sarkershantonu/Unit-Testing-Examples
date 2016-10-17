@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
 <modules>
     <module>Junit-Examples</module>
-    <module>Junit-Performance</module>
     <module>TestNG-Examples</module>
 </modules>
     

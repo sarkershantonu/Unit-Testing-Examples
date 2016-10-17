@@ -17,8 +17,6 @@ public class TestWatcherExample {
 
     @Rule
     public TestWatcher screenShot = new ScreenShotOnFailRule();
-
-
     @Test
     public void testFail(){
         Calculator calculator = new Calculator();
