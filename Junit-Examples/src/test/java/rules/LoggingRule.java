@@ -1,3 +1,5 @@
+package rules;
+
 
 import org.apache.log4j.Logger;
 import org.junit.rules.TestWatcher;
