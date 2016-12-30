@@ -5,6 +5,8 @@ import org.apache.log4j.Logger;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
+//use your own logger, i used very old log4j
+
 public class LoggingRule extends TestWatcher{
     private static Logger logger;
 
