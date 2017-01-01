@@ -9,20 +9,19 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/***
+ * Parallel suit example
+ */
 public class ParallelSuite extends Suite {
 
     public ParallelSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
-
         super(klass, builder);
 
         setScheduler(new RunnerScheduler() {
-
             private final ExecutorService service = Executors.newFixedThreadPool(4);
-
             public void schedule(Runnable childStatement) {
                 service.submit(childStatement);
             }
-
             public void finished() {
                 try {
                     service.shutdown();
