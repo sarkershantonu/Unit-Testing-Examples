@@ -20,7 +20,8 @@ public class ParallelParameterized extends Parameterized {
         public ThreadedScheduler(){
             service = Executors.newFixedThreadPool(
                     Integer.valueOf(
-                            System.getProperty("junit.parallel.threads", "4"))); // you can have your own property to confi this 
+                            System.getProperty("junit.parallel.threads", "4"))); 
+            // default 4 threads, but you can have your own property to config this "junit.parallel.threads"
 
         }
 
