@@ -34,6 +34,8 @@ public class ParallelParameterized extends Parameterized {
             service.shutdown();
             try {
                 service.awaitTermination(5, TimeUnit.MINUTES);
+                //i put 5 min if thread cant be shutdown, make sure your running resources are matched. 
+                //example, if your DB connection need more time , you may need to increase this to prevent thread termination. 
             } catch (InterruptedException e) {
                 throw new RuntimeException("Error Stopping Threads",e);
             }
