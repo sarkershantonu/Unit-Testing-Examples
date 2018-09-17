@@ -5,28 +5,28 @@ This actually contains different type of examples.No UI driven test examples are
 # Frameworks used for examples :(continuing)
 
 # Junit
--Power Mock
--Mockito
--JT Harness
--PIT(http://pitest.org/)
--Junit Benchmark
--JunitPerf
--CountiPerf
--fugit(parallel & performance)
--SOAP UI integration 
--Test Rule
--Custom Runner
--Expected Exception
--Allure Report integration
--Parametrization
--Parallel Execution
--Data provider(junit-dataprovider)
--Running Test from Main/Command line options)
+- Power Mock
+- Mockito
+- JT Harness
+- PIT(http://pitest.org/)
+- Junit Benchmark
+- JunitPerf
+- CountiPerf
+- fugit(parallel & performance)
+- SOAP UI integration 
+- Test Rule
+- Custom Runner
+- Expected Exception
+- Allure Report integration
+- Parametrization
+- Parallel Execution
+- Data provider(junit-dataprovider)
+- Running Test from Main/Command line options)
 
 # Junit-BDD
--JGiven
--JBehave
--Cucumber
+- JGiven
+- JBehave
+- Cucumber
 
 # TestNG
 
