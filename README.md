@@ -1,11 +1,10 @@
 # Unit-Testing-Examples
-Examples for Unit testing
-This actually contains different type of examples.
-No UI driven test examples are included here, only the
 
-Frameworks used for examples :
+This actually contains different type of examples.No UI driven test examples are included here, only the
 
-#Junit
+# Frameworks used for examples :(continuing)
+
+# Junit
 -Power Mock
 -Mockito
 -JT Harness
@@ -24,19 +23,18 @@ Frameworks used for examples :
 -Data provider(junit-dataprovider)
 -Running Test from Main/Command line options)
 
-#Junit-BDD
+# Junit-BDD
 -JGiven
 -JBehave
 -Cucumber
 
+# TestNG
 
-TestNG
-
-#NUnit
+# NUnit
 -Pex
 -Moles
 
-#Testing Types
+# Testing Types
 1. Basic Unit tests for method, class
 2. Mocking examples
 3. Work flow unit tests
