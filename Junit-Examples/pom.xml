@@ -8,7 +8,7 @@
     <artifactId>junit-example</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <surefire.version>2.19.1</surefire.version>
+        <surefire.version>2.22.2</surefire.version>
     </properties>
 
     <dependencies>
