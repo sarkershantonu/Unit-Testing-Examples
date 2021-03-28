@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suit name="allSuites">
-    <suit-files>
-        <suit-file path="tesng.xml"/>
-        <suit-file path="parallel-suit.xml"/>
-    </suit-files>
-</suit>

@@ -1,1 +1,1 @@
-# This is TEST NG examples
+# [This has moved here](https://github.com/sarkershantonu/testNG-examples)
