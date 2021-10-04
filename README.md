@@ -4,6 +4,8 @@ This actually contains different type of examples.No UI driven test examples are
 
 # Frameworks used for examples :(continuing)
 
+Todo : All projects will have separate repository
+
 # Junit
 - Power Mock
 - Mockito
